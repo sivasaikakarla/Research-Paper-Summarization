@@ -1,0 +1,24 @@
+# Ignore model directories
+models/bart-large-cnn/
+models/bart-large-mnli/
+models/
+
+# Ignore output directories
+outputs/
+
+
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Docker-specific ignores (optional)
+*.log
+Dockerfile.bak
