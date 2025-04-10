@@ -5,7 +5,6 @@ import re
 import warnings
 
 def extract_text_from_pdf(file_path):
-    # Suppress CropBox warnings
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", category=UserWarning, module="pdfplumber")
         try:

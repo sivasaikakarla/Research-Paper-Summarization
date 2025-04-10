@@ -3,8 +3,6 @@ models/bart-large-cnn/
 models/bart-large-mnli/
 models/
 
-# Ignore output directories
-outputs/
 
 
 # Python-specific ignores

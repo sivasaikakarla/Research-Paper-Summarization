@@ -10,10 +10,10 @@ class ClassificationAgent:
         self.classifier = pipeline("zero-shot-classification", model=model_path, device=-1)  # CPU
 
     def classify(self, content):
-        content = content[:1000]  # Limit for efficiency
+        content = content[:1000]
         try:
             result = self.classifier(content, candidate_labels=self.topics)
-            return result['labels'][0]  # Top predicted topic
+            return result['labels'][0]
         except Exception as e:
             print(f"Classification error: {e}. Defaulting to {self.topics[0]}.")
-            return self.topics[0]  # Fallback
+            return self.topics[0] 

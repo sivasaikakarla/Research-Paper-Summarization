@@ -6,10 +6,10 @@ This project is a multi-agent system that searches, processes, summarizes, class
 
 ## Features
 
-- Search for open-access research papers (e.g., arXiv) with filtering (relevance, recency).
+- Search for open-access research papers from arXiv.
 - Process papers from local PDFs, URLs, and DOIs.
 - Classify papers into user-defined topics (e.g., "AI", "Physics", "Biology").
-- Generate 500-word summaries and cross-paper topic syntheses.
+- Generate summaries and cross-paper topic syntheses.
 - Convert summaries and syntheses into audio podcasts (MP3).
 - Include citations for traceability.
 
@@ -21,7 +21,7 @@ This project is a multi-agent system that searches, processes, summarizes, class
 
 - Python: 3.8 or higher  
 - Docker: Latest version (optional, for containerized setup)  
-- Internet: Required for initial model downloads and audio generation (unless using offline fallback)  
+- Internet: Required for initial model downloads and audio generation
 - Hardware: At least 8GB RAM (for local models)  
 
 ---
@@ -31,7 +31,7 @@ This project is a multi-agent system that searches, processes, summarizes, class
 #### Clone the Repository:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/sivasaikakarla/Research-Paper-Summarization.git
 cd research-summarizer
 ```
 
@@ -75,7 +75,7 @@ Place a sample PDF (e.g., `sample1.pdf`) in `sample_papers/`.
 Execute:
 
 ```bash
-python3 main.py
+python main.py
 ```
 
 Outputs appear in `outputs/summaries/` (text) and `outputs/podcasts/` (MP3s).
@@ -112,12 +112,6 @@ docker build -t research-summarizer .
 ```
 
 ### Run the Container:
-
-**With a local PDF:**
-
-```bash
-docker run -v $(pwd)/sample_papers:/app/sample_papers -v $(pwd)/outputs:/app/outputs research-summarizer
-```
 
 **Without a PDF (query only):**
 
@@ -165,13 +159,13 @@ The system uses a multi-agent architecture with specialized agents coordinated b
   Classifies using `bart-large-mnli`.
 
 - **SummaryAgent:**  
-  Generates 500-word summaries.
+  Generates summaries.
 
 - **SynthesisAgent:**  
   Combines summaries into syntheses.
 
 - **AudioAgent:**  
-  Converts text to MP3s using gTTS (online) or pyttsx3 (offline fallback).
+  Converts text to MP3s using gTTS (online).
 
 **Coordination:**  
 Agents operate sequentially:  

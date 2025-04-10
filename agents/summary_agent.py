@@ -9,7 +9,7 @@ class SummaryAgent:
         self.summarizer = pipeline("summarization", model=model_path)
 
     def summarize(self, content):
-        input_text = content[:4000]  # More context for 500 words
+        input_text = content[:4000] 
         target_words = 500
         words_per_chunk = 100
         chunks = [input_text[i:i+1000] for i in range(0, len(input_text), 1000)]
