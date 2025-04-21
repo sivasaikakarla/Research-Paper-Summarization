@@ -24,4 +24,3 @@ model.save_pretrained(save_dir)
 tokenizer.save_pretrained(save_dir)
 
 print(f"Model saved to {save_dir}")
-# 
